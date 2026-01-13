@@ -1,67 +1,74 @@
-# 🕵️💳 Credit Card Fraud Detection with PySpark
+# การตรวจจับการฉ้อโกงบัตรเครดิตด้วย Apache Spark (Credit Card Fraud Detection)
 
-![Python](https://img.shields.io/badge/Python-3.x-blue?style=for-the-badge&logo=python)
-![Spark](https://img.shields.io/badge/Apache_Spark-PySpark-orange?style=for-the-badge&logo=apachespark)
-![Status](https://img.shields.io/badge/Status-Completed-success?style=for-the-badge)
+![Python](https://img.shields.io/badge/Python-3.x-blue?style=flat-square)
+![Spark](https://img.shields.io/badge/Apache_Spark-PySpark-orange?style=flat-square)
+![Status](https://img.shields.io/badge/Status-Completed-success?style=flat-square)
 
-## 📌 Project Overview
-This project is a **Big Data Analytics Mini-Project** focused on detecting fraudulent credit card transactions. 
+## 📌 บทสรุปผู้บริหาร (Project Overview)
+โครงการนี้เป็นส่วนหนึ่งของรายวิชา **Big Data Analytics** โดยมีวัตถุประสงค์เพื่อพัฒนาระบบตรวจจับธุรกรรมบัตรเครดิตที่ผิดปกติ (Fraud Detection) โดยประยุกต์ใช้เทคโนโลยีการประมวลผลข้อมูลขนาดใหญ่ (Big Data)
 
-We utilize **Apache Spark (PySpark)** to handle a large dataset of over 284,000 transactions. The core challenge of this project is dealing with highly **imbalanced data** (where fraud cases represent only 0.17% of the total). We implemented an end-to-end **Machine Learning Pipeline** using Random Forest Classification to accurately identify fraud while minimizing false negatives.
+ความท้าทายหลักของชุดข้อมูลนี้คือ **ความไม่สมดุลของข้อมูล (Imbalanced Data)** ซึ่งมีสัดส่วนของธุรกรรมฉ้อโกงเพียง 0.17% ของข้อมูลทั้งหมด คณะผู้จัดทำจึงได้ออกแบบกระบวนการทำงานแบบ **End-to-End Machine Learning Pipeline** บน Apache Spark โดยเลือกใช้โมเดล **Random Forest Classifier** เพื่อให้ได้ผลลัพธ์ที่มีความแม่นยำสูงทั้งในด้าน Precision และ Recall
 
-## 📂 Dataset
-**Source:** [Credit Card Fraud Detection Dataset (Kaggle)](https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud)
-* **Size:** 284,807 Transactions
-* **Features:** 30 Features (Time, Amount, and V1-V28 from PCA transformation)
-* **Target:** `Class` (0 = Normal, 1 = Fraud)
+## 📂 รายละเอียดชุดข้อมูล (Dataset)
+ข้อมูลที่ใช้ในการวิเคราะห์ได้มาจาก [Kaggle: Credit Card Fraud Detection Dataset](https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud)
 
-## 🛠️ Technologies & Tools
-* **Core Engine:** Apache Spark (PySpark)
+* **จำนวนข้อมูล:** 284,807 รายการ (Transactions)
+* **คุณลักษณะ (Features):** ประกอบด้วย 30 ตัวแปร
+    * `Time`, `Amount`
+    * `V1` ถึง `V28` (เป็นข้อมูลที่ผ่านการทำ PCA เพื่อปกป้องข้อมูลส่วนบุคคล)
+* **ตัวแปรเป้าหมาย (Target):** `Class`
+    * `0` = ธุรกรรมปกติ (Normal)
+    * `1` = ธุรกรรมฉ้อโกง (Fraud)
+
+## 🛠️ เครื่องมือและเทคโนโลยี (Tech Stack)
+โครงการนี้พัฒนาโดยใช้สภาพแวดล้อมและเครื่องมือ ดังนี้:
+
+* **Core Engine:** Apache Spark (PySpark) - สำหรับประมวลผลข้อมูลขนาดใหญ่แบบขนาน
 * **Language:** Python
-* **IDE:** VS Code / Jupyter Notebook
-* **Libraries:**
-    * `pyspark.ml` (Machine Learning Pipeline)
-    * `scikit-learn` (Advanced Evaluation Metrics)
-    * `pandas` & `seaborn` (Data Visualization)
+* **IDE:** Visual Studio Code / Jupyter Notebook
+* **Libraries ที่สำคัญ:**
+    * `pyspark.ml`: สำหรับสร้าง ML Pipeline, Feature Engineering และ Model Training
+    * `scikit-learn`: สำหรับการวัดผลโมเดลขั้นสูง (Confusion Matrix, Classification Report)
+    * `pandas` & `seaborn`: สำหรับการสร้างภาพข้อมูล (Data Visualization)
 
-## ⚙️ Methodology (The Pipeline)
-We implemented an **Enterprise-Grade ML Pipeline** consisting of the following stages:
+## ⚙️ ระเบียบวิธีวิจัย (Methodology)
+ทางคณะผู้จัดทำได้วางแผนกระบวนการวิเคราะห์ข้อมูล (Data Analytics Pipeline) ดังนี้:
 
-1.  **Data Ingestion:** Loading data with optimized Spark Session configurations.
-2.  **Exploratory Data Analysis (EDA):** Visualizing class imbalance and transaction distributions.
-3.  **Feature Engineering:**
-    * `VectorAssembler`: Combining features into vectors.
-    * `StandardScaler`: Normalizing features for better model performance.
-4.  **Modeling:** Using **Random Forest Classifier** (Robust to overfitting and handles imbalance well).
-5.  **Evaluation:** Using a hybrid approach (Spark Evaluator + Sklearn) to measure Precision, Recall, and F1-Score.
+1.  **Data Ingestion:** การนำเข้าข้อมูลเข้าสู่ Spark Session โดยมีการปรับจูน Configuration เพื่อประสิทธิภาพสูงสุด
+2.  **Exploratory Data Analysis (EDA):** การสำรวจข้อมูลและตรวจสอบการกระจายตัวของคลาส (Class Imbalance Investigation)
+3.  **Feature Engineering:** การเตรียมข้อมูลสำหรับโมเดล
+    * ใช้ `VectorAssembler` ในการรวมคุณลักษณะ
+    * ใช้ `StandardScaler` เพื่อปรับมาตรฐานข้อมูล (Normalization)
+4.  **Modeling:** การสร้างโมเดลจำแนกประเภทด้วย **Random Forest Classifier** เนื่องจากมีความทนทานต่อข้อมูลที่ไม่สมดุลและลดโอกาสเกิด Overfitting
+5.  **Evaluation:** การประเมินผลแบบผสมผสาน (Hybrid Evaluation) ระหว่าง Spark Evaluator และ Scikit-learn Metrics
 
-## 🚀 How to Run
-1.  **Prerequisites:** Ensure Java (JDK 8/11) and Python are installed.
-2.  **Install Dependencies:**
+## 📊 ผลลัพธ์การดำเนินงาน (Experimental Results)
+เนื่องจากข้อมูลมีความไม่สมดุลสูง การวัดผลจึงให้ความสำคัญกับค่า **F1-Score** และ **Recall** มากกว่าค่า Accuracy เพียงอย่างเดียว
+
+| ตัวชี้วัด (Metric) | ผลลัพธ์ (Score) |
+| :--- | :--- |
+| **Accuracy** | *[ใส่ค่าที่ได้ เช่น 99.95%]* |
+| **Precision (Fraud)** | *[ใส่ค่าที่ได้ เช่น 0.94]* |
+| **Recall (Fraud)** | *[ใส่ค่าที่ได้ เช่น 0.81]* |
+| **F1-Score** | *[ใส่ค่าที่ได้ เช่น 0.87]* |
+
+> **หมายเหตุ:** สามารถดูตาราง Confusion Matrix ฉบับเต็มได้ในไฟล์ Notebook
+
+## 🚀 ขั้นตอนการติดตั้งและใช้งาน (Installation)
+หากต้องการทดสอบระบบหรือรันโค้ดซ้ำ สามารถทำตามขั้นตอนได้ดังนี้:
+
+1.  **เตรียมความพร้อม:** ตรวจสอบว่าเครื่องคอมพิวเตอร์ติดตั้ง Java (JDK 8 หรือ 11) และ Python เรียบร้อยแล้ว
+2.  **ติดตั้ง Libraries:**
     ```bash
     pip install pyspark scikit-learn pandas seaborn matplotlib findspark
     ```
-3.  **Download Dataset:** Place `creditcard.csv` in the project root directory.
-4.  **Run the Notebook:** Open `fraud_detection_demo.ipynb` in VS Code or Jupyter and run all cells.
+3.  **เตรียมข้อมูล:** ดาวน์โหลดไฟล์ `creditcard.csv` และนำไปวางในโฟลเดอร์หลักของโปรเจกต์
+4.  **การประมวลผล:** เปิดไฟล์ `fraud_detection_demo.ipynb` ผ่าน VS Code หรือ Jupyter และกด Run All Cells
 
-## 📊 Results & Performance
-*(Based on Random Forest Model)*
-
-Due to the imbalance of the dataset, we prioritize **F1-Score** and **Recall** over Accuracy.
-
-| Metric | Score |
-| :--- | :--- |
-| **Accuracy** | *99.9x%* (Sample) |
-| **Precision (Fraud)** | *0.9x* (Sample) |
-| **Recall (Fraud)** | *0.8x* (Sample) |
-| **F1-Score** | *0.8x* (Sample) |
-
-> *Note: See the full Confusion Matrix in the notebook output.*
-
-## 👥 Team Members
-* **Nicky:** Demo Implementation (Code + Video), Data Modeling
-* **[Member 2 Name]:** Report (Introduction, Theory, Methodology)
-* **[Member 3 Name]:** Report (Results, Analysis, Conclusion)
+## 👥 สมาชิกในกลุ่ม
+* **[ชื่อ-นามสกุล Nicky]** - ผู้พัฒนาโมเดล, จัดทำ Demo และวิดีโอสาธิต
+* **[ชื่อ-นามสกุล เพื่อนคนที่ 2]** - จัดทำรายงานส่วนบทนำ ทฤษฎีที่เกี่ยวข้อง และระเบียบวิธีวิจัย
+* **[ชื่อ-นามสกุล เพื่อนคนที่ 3]** - จัดทำรายงานส่วนผลการวิเคราะห์ สรุปผล และข้อเสนอแนะ
 
 ---
-*University Project | Big Data Analytics Class*
+*Mini-Project รายวิชา Big Data Analytics | [ชื่อมหาวิทยาลัยของคุณ]*
