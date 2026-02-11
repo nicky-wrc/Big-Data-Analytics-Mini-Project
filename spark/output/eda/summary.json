@@ -1,0 +1,16 @@
+{
+  "total_transactions": 284807,
+  "total_fraud": 492,
+  "total_non_fraud": 284315,
+  "fraud_rate_percent": 0.1727,
+  "features": 30,
+  "top_correlated_features": [
+    "V17",
+    "V14",
+    "V12",
+    "V10",
+    "V16"
+  ],
+  "mean_fraud_amount": 122.21,
+  "mean_non_fraud_amount": 88.29
+}

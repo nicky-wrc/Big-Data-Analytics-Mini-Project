@@ -1,0 +1,12 @@
+[
+  {
+    "Class": 1,
+    "count": 492,
+    "percentage": 0.1727
+  },
+  {
+    "Class": 0,
+    "count": 284315,
+    "percentage": 99.8273
+  }
+]

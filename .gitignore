@@ -1,0 +1,48 @@
+# Dependencies
+node_modules/
+.npm
+.pnpm-store/
+
+# Build outputs
+dist/
+build/
+*.egg-info/
+__pycache__/
+*.pyc
+*.pyo
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Docker volumes (database data)
+pgdata/
+
+# Large data files (download from Kaggle - file too large for GitHub)
+spark/data/creditcard.csv
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
+
+# OS generated files
+Thumbs.db
+ehthumbs.db
+
+# Test coverage
+coverage/
+.nyc_output/

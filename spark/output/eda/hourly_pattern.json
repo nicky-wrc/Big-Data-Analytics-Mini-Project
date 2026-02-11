@@ -1,0 +1,146 @@
+[
+  {
+    "Hour": 0,
+    "total": 7695,
+    "fraud_count": 6,
+    "fraud_rate": 0.078
+  },
+  {
+    "Hour": 1,
+    "total": 4220,
+    "fraud_count": 10,
+    "fraud_rate": 0.237
+  },
+  {
+    "Hour": 2,
+    "total": 3328,
+    "fraud_count": 57,
+    "fraud_rate": 1.7127
+  },
+  {
+    "Hour": 3,
+    "total": 3492,
+    "fraud_count": 17,
+    "fraud_rate": 0.4868
+  },
+  {
+    "Hour": 4,
+    "total": 2209,
+    "fraud_count": 23,
+    "fraud_rate": 1.0412
+  },
+  {
+    "Hour": 5,
+    "total": 2990,
+    "fraud_count": 11,
+    "fraud_rate": 0.3679
+  },
+  {
+    "Hour": 6,
+    "total": 4101,
+    "fraud_count": 9,
+    "fraud_rate": 0.2195
+  },
+  {
+    "Hour": 7,
+    "total": 7243,
+    "fraud_count": 23,
+    "fraud_rate": 0.3175
+  },
+  {
+    "Hour": 8,
+    "total": 10276,
+    "fraud_count": 9,
+    "fraud_rate": 0.0876
+  },
+  {
+    "Hour": 9,
+    "total": 15838,
+    "fraud_count": 16,
+    "fraud_rate": 0.101
+  },
+  {
+    "Hour": 10,
+    "total": 16598,
+    "fraud_count": 8,
+    "fraud_rate": 0.0482
+  },
+  {
+    "Hour": 11,
+    "total": 16856,
+    "fraud_count": 53,
+    "fraud_rate": 0.3144
+  },
+  {
+    "Hour": 12,
+    "total": 15420,
+    "fraud_count": 17,
+    "fraud_rate": 0.1102
+  },
+  {
+    "Hour": 13,
+    "total": 15365,
+    "fraud_count": 17,
+    "fraud_rate": 0.1106
+  },
+  {
+    "Hour": 14,
+    "total": 16570,
+    "fraud_count": 23,
+    "fraud_rate": 0.1388
+  },
+  {
+    "Hour": 15,
+    "total": 16461,
+    "fraud_count": 26,
+    "fraud_rate": 0.1579
+  },
+  {
+    "Hour": 16,
+    "total": 16453,
+    "fraud_count": 22,
+    "fraud_rate": 0.1337
+  },
+  {
+    "Hour": 17,
+    "total": 16166,
+    "fraud_count": 29,
+    "fraud_rate": 0.1794
+  },
+  {
+    "Hour": 18,
+    "total": 17039,
+    "fraud_count": 33,
+    "fraud_rate": 0.1937
+  },
+  {
+    "Hour": 19,
+    "total": 15649,
+    "fraud_count": 19,
+    "fraud_rate": 0.1214
+  },
+  {
+    "Hour": 20,
+    "total": 16756,
+    "fraud_count": 18,
+    "fraud_rate": 0.1074
+  },
+  {
+    "Hour": 21,
+    "total": 17703,
+    "fraud_count": 16,
+    "fraud_rate": 0.0904
+  },
+  {
+    "Hour": 22,
+    "total": 15441,
+    "fraud_count": 9,
+    "fraud_rate": 0.0583
+  },
+  {
+    "Hour": 23,
+    "total": 10938,
+    "fraud_count": 21,
+    "fraud_rate": 0.192
+  }
+]

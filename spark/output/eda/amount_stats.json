@@ -1,0 +1,16 @@
+[
+  {
+    "Class": 1,
+    "mean_amount": 122.21,
+    "std_amount": 256.68,
+    "min_amount": 0.0,
+    "max_amount": 2125.87
+  },
+  {
+    "Class": 0,
+    "mean_amount": 88.29,
+    "std_amount": 250.11,
+    "min_amount": 0.0,
+    "max_amount": 25691.16
+  }
+]
