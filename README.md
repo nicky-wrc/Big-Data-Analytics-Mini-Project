@@ -123,7 +123,9 @@ docker-compose down -v
 
 ## 👥 Team
 
-- Developer: [Your Name]
+- Developer: Worachat Paranya
+-
+-
 
 ---
 
