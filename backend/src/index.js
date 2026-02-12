@@ -13,7 +13,9 @@ app.use(cors({
     'http://localhost:3000',
     'http://localhost:5173',
     'https://fraudlens-frontend.onrender.com',
-    /\.onrender\.com$/
+    /\.onrender\.com$/,
+    /\.vercel\.app$/,
+    'https://big-data-analytics-mini-project.vercel.app'
   ],
   credentials: true
 }));
